@@ -1,54 +1,108 @@
-# WorldEconomics Crew
+# 🌍 WorldEconomics Crew
 
-Welcome to the WorldEconomics Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+**WorldEconomics Crew** is a powerful multi-agent system powered by [crewAI](https://crewai.com). It enables collaborative AI workflows for complex economic research—such as generating structured reports and answering follow-up queries—through intelligent agent coordination.
 
-## Installation
+---
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+## 📸 App Showcase
 
-First, if you haven't already, install uv:
+<p align="center">
+  <img src="app_report.png" alt="Report Generation UI" width="90%" />
+  <em>Figure 1: Report Generation Interface</em>
+</p>
+
+<p align="center">
+  <img src="app_chat.png" alt="Follow-up Chat Interface" width="90%" />
+  <em>Figure 2: Follow-up Question Chatbot Interface</em>
+</p>
+
+---
+
+## 🚀 Features
+
+- 📊 Generate in-depth economic reports from natural language queries
+- 💬 Interact with a follow-up chatbot trained on your generated report
+- 🤖 Powered by multiple specialized agents using [crewAI](https://crewai.com)
+- 🧠 Seamless integration with tools like OpenAI, custom search, and more
+- 📦 Simple and scalable architecture using Python and `uv` for dependency management
+
+---
+
+## 🛠️ Installation
+
+Ensure Python **>=3.10 and <3.13** is installed.
+
+### 1. Install [uv](https://docs.astral.sh/uv/)
 
 ```bash
 pip install uv
 ```
 
-Next, navigate to your project directory and install the dependencies:
+### 2. Clone and install dependencies
 
-(Optional) Lock the dependencies and install them by using the CLI command:
 ```bash
+git clone https://github.com/your-org/world_economics.git
+cd world_economics
 crewai install
 ```
-### Customizing
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+### 3.🧪 Running the Project
 
-- Modify `src/world_economics/config/agents.yaml` to define your agents
-- Modify `src/world_economics/config/tasks.yaml` to define your tasks
-- Modify `src/world_economics/crew.py` to add your own logic, tools and specific args
-- Modify `src/world_economics/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+From CLI (default report generation)
 
 ```bash
-$ crewai run
+crewai run
 ```
 
-This command initializes the World_economics Crew, assembling the agents and assigning them tasks as defined in your configuration.
+This generates a report.md file in the root directory.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+From UI (Streamlit app)
 
-## Understanding Your Crew
+```bash
+streamlit run app.py
+```
 
-The World_economics Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+- Ask a question like "How does the Fed’s interest rate policy affect developing economies?"
 
-## Support
+- Wait for a structured report to be generated
 
-For support, questions, or feedback regarding the WorldEconomics Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+- Ask follow-up questions via integrated chatbot
 
-Let's create wonders together with the power and simplicity of crewAI.
+## 🧱 Project Structure
+
+```
+.
+├── app.py                       # Streamlit application
+├── final_report.md             # Output report
+├── knowledge/                  # Custom data and prompts
+│   └── user_preference.txt
+├── src/world_economics/        # Main project logic
+│   ├── config/                 # YAML config for agents & tasks
+│   ├── tools/                  # Custom tools (e.g. Serper, scraping)
+│   ├── crew.py                 # Crew configuration (main agents)
+│   ├── chat_crew.py            # Chat follow-up crew
+│   └── main.py                 # CLI runnable entry point
+├── tests/                      # (Optional) Test suite
+├── pyproject.toml              # Project metadata
+└── uv.lock                     # Locked dependencies
+```
+
+## 💡 How It Works
+
+- Define agents with goals and backstories (e.g., Analyst, Researcher, Chat Assistant)
+
+- Create tasks for each stage of the report generation or follow-up
+
+- Kickoff a Crew, where agents collaborate in sequential or hierarchical workflows
+
+- Use the Streamlit app for an interactive experience
+
+## 📘 Example Use Case
+
+- User enters: "What impact does China's monetary policy have on global inflation?"
+
+- A report is generated and saved as final_report.md
+
+- User asks: "How does this compare to the U.S. policy in 2023?"
+
+- Chat agent analyzes the report and responds intelligently
