@@ -1,0 +1,47 @@
+user_analysis_task:
+  description: >
+    user_query: {user_query}
+    current_year: {current_year}
+    ###
+    Analyze the user's question and extract key economic themes, regions, entities, and the overall intent.
+    Classify the query as macroeconomic, microeconomic, policy-based, or data-oriented.
+  expected_output: >
+    A structured intent summary including:
+    - Economic category (macro/micro)
+    - Topic(s)
+    - Region or country
+    - Specific data needs (if any)
+  agent: user_analyst
+
+research_task:
+  description: >
+    user_query: {user_query}
+    current_year: {current_year}
+    ###
+
+    Conduct a thorough research about it using credible and up-to-date economic sources.
+    Make sure you find relevant and recent information considering the current year is {current_year}.
+    Use APIs and web search tools as needed.
+  expected_output: >
+    A list with 10 bullet points of the most relevant facts and data points about it, with source links and publication dates.
+  agent: data_researcher
+
+analysis_task:
+  description: >
+    current_year: {current_year}
+    ###
+    Analyze the research results and synthesize economic meaning.
+    Explain the causes, consequences, and trends related to it, drawing connections to historical or current events.
+  expected_output: >
+    A detailed analytical brief, explaining economic implications in clear, structured prose.
+  agent: economic_analyst
+
+reporting_task:
+  description: >
+    current_year: {current_year}
+    ###
+    Expand the analytical output into a full economic report.
+    Ensure it includes headers, subheaders, explanations, and clear takeaways in markdown format (no backticks).
+  expected_output: >
+    A complete markdown-formatted report on it with sections like Introduction, Data Analysis, Economic Impact, and References.
+  agent: response_writer

@@ -1,0 +1,9 @@
+.env
+__pycache__/
+.DS_Store
+
+final_report.md
+user_analysis_report.md
+research_task_report.md
+analysis_task_report.md
+.venv

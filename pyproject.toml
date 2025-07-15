@@ -1,0 +1,21 @@
+[project]
+name = "world_economics"
+version = "0.1.0"
+description = "World_economics using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = ["crewai[tools]>=0.121.1,<1.0.0", "streamlit", "exa-py"]
+
+[project.scripts]
+world_economics = "world_economics.main:run"
+run_crew = "world_economics.main:run"
+train = "world_economics.main:train"
+replay = "world_economics.main:replay"
+test = "world_economics.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
