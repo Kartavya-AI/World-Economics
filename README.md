@@ -7,12 +7,12 @@
 ## 📸 App Showcase
 
 <p align="center">
-  <img src="app_report.png" alt="Report Generation UI" width="90%" />
+  <img src="app_report.png" alt="Report Generation UI"/>
   <em>Figure 1: Report Generation Interface</em>
 </p>
 
 <p align="center">
-  <img src="app_chat.png" alt="Follow-up Chat Interface" width="90%" />
+  <img src="app_chat.png" alt="Follow-up Chat Interface" />
   <em>Figure 2: Follow-up Question Chatbot Interface</em>
 </p>
 
