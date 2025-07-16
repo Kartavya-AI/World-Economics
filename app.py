@@ -3,7 +3,6 @@ import os
 from datetime import datetime
 from crewai import Agent, Task, Crew, Process
 from src.world_economics.crew import WorldEconomicsCrew
-from src.world_economics.tools.serper_tool import serper_tool
 import traceback
 
 # Page config
@@ -65,6 +64,7 @@ with st.sidebar:
         else:
             st.error("❌ Please enter at least one API key or model selection.")
 
+from src.world_economics.tools.serper_tool import serper_tool
 st.title("🌍 World Economics AI")
 st.markdown("Get structured economic insights and interact with a live economic assistant.")
 
