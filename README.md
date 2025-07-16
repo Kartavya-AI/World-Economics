@@ -7,7 +7,7 @@
 ## 📸 App Showcase
 
 <p align="center">
-  <img src="app_report.png" alt="Report Generation UI"/>
+  <img src="app_ui.png" alt="Report Generation UI"/>
   <em>Figure 1: Report Generation Interface</em>
 </p>
 
