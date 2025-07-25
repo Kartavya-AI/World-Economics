@@ -106,3 +106,10 @@ streamlit run app.py
 - User asks: "How does this compare to the U.S. policy in 2023?"
 
 - Chat agent analyzes the report and responds intelligently
+
+### GCP
+
+```bash
+TOKEN=$(gcloud auth print-identity-token)
+curl -H "Authorization: Bearer $TOKEN"      -H "Content-Type: application/json"      -d '{"user_query": "How does inflation affect sovereign debt in low-income countries?"}'      https://world-econ-api-977121587860.asia-south1.run.app/run-analysis
+```
